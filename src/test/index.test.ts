@@ -17,15 +17,7 @@ describe("POST /sum", () => {
       a : 4,
       b : 5
     });
-    vi.mock("../db", () => {
-      return {
-        prismaClient: {
-          sum: {
-            create: vi.fn()
-          }
-        }
-      }
-    })
+    vi.mock("../db")
 
     describe("POST /sum", () => {
       it("should return the sum of two numbers", async () => {
